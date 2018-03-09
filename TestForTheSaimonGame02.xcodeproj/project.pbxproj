@@ -7,14 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0EBBCA9ADA27507F194372 /* Pods_TestForTheSaimonGame02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E43015CB70C4D82EBDE2B5A /* Pods_TestForTheSaimonGame02.framework */; };
+		D775D085204EF7D700203BE8 /* f1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D078204EF7D300203BE8 /* f1.wav */; };
+		D775D086204EF7D700203BE8 /* a1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D079204EF7D300203BE8 /* a1s.wav */; };
+		D775D087204EF7D700203BE8 /* d1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07A204EF7D400203BE8 /* d1.wav */; };
+		D775D088204EF7D700203BE8 /* a1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07B204EF7D400203BE8 /* a1.wav */; };
+		D775D089204EF7D700203BE8 /* g1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07C204EF7D400203BE8 /* g1.wav */; };
+		D775D08A204EF7D700203BE8 /* g1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07D204EF7D400203BE8 /* g1s.wav */; };
+		D775D08B204EF7D700203BE8 /* e1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07E204EF7D500203BE8 /* e1.wav */; };
+		D775D08C204EF7D700203BE8 /* c1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07F204EF7D500203BE8 /* c1s.wav */; };
+		D775D08D204EF7D700203BE8 /* c1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D080204EF7D500203BE8 /* c1.wav */; };
+		D775D08E204EF7D700203BE8 /* d1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D081204EF7D600203BE8 /* d1s.wav */; };
+		D775D08F204EF7D700203BE8 /* c2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D082204EF7D600203BE8 /* c2.wav */; };
+		D775D090204EF7D700203BE8 /* f1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D083204EF7D600203BE8 /* f1s.wav */; };
+		D775D091204EF7D700203BE8 /* b1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D084204EF7D600203BE8 /* b1.wav */; };
+		D775D093204EFBD400203BE8 /* aliensSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D092204EFBD400203BE8 /* aliensSound.wav */; };
+		D775D098204F056200203BE8 /* pianoLow1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D094204F056000203BE8 /* pianoLow1.wav */; };
+		D775D099204F056200203BE8 /* pianoMidium3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D095204F056000203BE8 /* pianoMidium3.wav */; };
+		D775D09A204F056200203BE8 /* pianoHigh4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D096204F056100203BE8 /* pianoHigh4.wav */; };
+		D775D09B204F056200203BE8 /* pianoMidium2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D097204F056100203BE8 /* pianoMidium2.wav */; };
 		D789EA0B204E1FCC00CF7C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D789EA0A204E1FCC00CF7C3A /* AppDelegate.swift */; };
 		D789EA0D204E1FCC00CF7C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D789EA0C204E1FCC00CF7C3A /* ViewController.swift */; };
 		D789EA10204E1FCC00CF7C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D789EA0E204E1FCC00CF7C3A /* Main.storyboard */; };
 		D789EA12204E1FCC00CF7C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D789EA11204E1FCC00CF7C3A /* Assets.xcassets */; };
 		D789EA15204E1FCC00CF7C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D789EA13204E1FCC00CF7C3A /* LaunchScreen.storyboard */; };
+		D789EA24204EBCC000CF7C3A /* G1sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA1D204EBCBE00CF7C3A /* G1sound.wav */; };
+		D789EA25204EBCC000CF7C3A /* C2sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA1E204EBCBE00CF7C3A /* C2sound.wav */; };
+		D789EA26204EBCC000CF7C3A /* F1sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA1F204EBCBE00CF7C3A /* F1sound.wav */; };
+		D789EA27204EBCC000CF7C3A /* F2sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA20204EBCBF00CF7C3A /* F2sound.wav */; };
+		D789EA28204EBCC000CF7C3A /* G2sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA21204EBCBF00CF7C3A /* G2sound.wav */; };
+		D789EA29204EBCC000CF7C3A /* Asound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA22204EBCBF00CF7C3A /* Asound.wav */; };
+		D789EA2A204EBCC000CF7C3A /* C1sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D789EA23204EBCC000CF7C3A /* C1sound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E43015CB70C4D82EBDE2B5A /* Pods_TestForTheSaimonGame02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestForTheSaimonGame02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A43B1BD4819D2E08D7EDD4A /* Pods-TestForTheSaimonGame02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestForTheSaimonGame02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02.debug.xcconfig"; sourceTree = "<group>"; };
+		A0CD2F532C328B60E366269D /* Pods-TestForTheSaimonGame02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestForTheSaimonGame02.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02.release.xcconfig"; sourceTree = "<group>"; };
+		D775D078204EF7D300203BE8 /* f1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f1.wav; sourceTree = "<group>"; };
+		D775D079204EF7D300203BE8 /* a1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a1s.wav; sourceTree = "<group>"; };
+		D775D07A204EF7D400203BE8 /* d1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d1.wav; sourceTree = "<group>"; };
+		D775D07B204EF7D400203BE8 /* a1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a1.wav; sourceTree = "<group>"; };
+		D775D07C204EF7D400203BE8 /* g1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g1.wav; sourceTree = "<group>"; };
+		D775D07D204EF7D400203BE8 /* g1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g1s.wav; sourceTree = "<group>"; };
+		D775D07E204EF7D500203BE8 /* e1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = e1.wav; sourceTree = "<group>"; };
+		D775D07F204EF7D500203BE8 /* c1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c1s.wav; sourceTree = "<group>"; };
+		D775D080204EF7D500203BE8 /* c1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c1.wav; sourceTree = "<group>"; };
+		D775D081204EF7D600203BE8 /* d1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d1s.wav; sourceTree = "<group>"; };
+		D775D082204EF7D600203BE8 /* c2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c2.wav; sourceTree = "<group>"; };
+		D775D083204EF7D600203BE8 /* f1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f1s.wav; sourceTree = "<group>"; };
+		D775D084204EF7D600203BE8 /* b1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b1.wav; sourceTree = "<group>"; };
+		D775D092204EFBD400203BE8 /* aliensSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = aliensSound.wav; sourceTree = "<group>"; };
+		D775D094204F056000203BE8 /* pianoLow1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pianoLow1.wav; sourceTree = "<group>"; };
+		D775D095204F056000203BE8 /* pianoMidium3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pianoMidium3.wav; sourceTree = "<group>"; };
+		D775D096204F056100203BE8 /* pianoHigh4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pianoHigh4.wav; sourceTree = "<group>"; };
+		D775D097204F056100203BE8 /* pianoMidium2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pianoMidium2.wav; sourceTree = "<group>"; };
 		D789EA07204E1FCC00CF7C3A /* TestForTheSaimonGame02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestForTheSaimonGame02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D789EA0A204E1FCC00CF7C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D789EA0C204E1FCC00CF7C3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +69,13 @@
 		D789EA11204E1FCC00CF7C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D789EA14204E1FCC00CF7C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D789EA16204E1FCC00CF7C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D789EA1D204EBCBE00CF7C3A /* G1sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G1sound.wav; sourceTree = "<group>"; };
+		D789EA1E204EBCBE00CF7C3A /* C2sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C2sound.wav; sourceTree = "<group>"; };
+		D789EA1F204EBCBE00CF7C3A /* F1sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F1sound.wav; sourceTree = "<group>"; };
+		D789EA20204EBCBF00CF7C3A /* F2sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F2sound.wav; sourceTree = "<group>"; };
+		D789EA21204EBCBF00CF7C3A /* G2sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G2sound.wav; sourceTree = "<group>"; };
+		D789EA22204EBCBF00CF7C3A /* Asound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Asound.wav; sourceTree = "<group>"; };
+		D789EA23204EBCC000CF7C3A /* C1sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C1sound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0EBBCA9ADA27507F194372 /* Pods_TestForTheSaimonGame02.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC1E0855728469F4545A425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E43015CB70C4D82EBDE2B5A /* Pods_TestForTheSaimonGame02.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB1721E461347EC23C75417B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A43B1BD4819D2E08D7EDD4A /* Pods-TestForTheSaimonGame02.debug.xcconfig */,
+				A0CD2F532C328B60E366269D /* Pods-TestForTheSaimonGame02.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D789E9FE204E1FCC00CF7C3A = {
 			isa = PBXGroup;
 			children = (
 				D789EA09204E1FCC00CF7C3A /* TestForTheSaimonGame02 */,
 				D789EA08204E1FCC00CF7C3A /* Products */,
+				CB1721E461347EC23C75417B /* Pods */,
+				0BC1E0855728469F4545A425 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +134,41 @@
 				D789EA11204E1FCC00CF7C3A /* Assets.xcassets */,
 				D789EA13204E1FCC00CF7C3A /* LaunchScreen.storyboard */,
 				D789EA16204E1FCC00CF7C3A /* Info.plist */,
+				D789EA1C204EBC8500CF7C3A /* Sound Files */,
 			);
 			path = TestForTheSaimonGame02;
+			sourceTree = "<group>";
+		};
+		D789EA1C204EBC8500CF7C3A /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				D789EA22204EBCBF00CF7C3A /* Asound.wav */,
+				D789EA23204EBCC000CF7C3A /* C1sound.wav */,
+				D789EA1E204EBCBE00CF7C3A /* C2sound.wav */,
+				D789EA1F204EBCBE00CF7C3A /* F1sound.wav */,
+				D789EA20204EBCBF00CF7C3A /* F2sound.wav */,
+				D789EA1D204EBCBE00CF7C3A /* G1sound.wav */,
+				D789EA21204EBCBF00CF7C3A /* G2sound.wav */,
+				D775D07B204EF7D400203BE8 /* a1.wav */,
+				D775D096204F056100203BE8 /* pianoHigh4.wav */,
+				D775D094204F056000203BE8 /* pianoLow1.wav */,
+				D775D097204F056100203BE8 /* pianoMidium2.wav */,
+				D775D095204F056000203BE8 /* pianoMidium3.wav */,
+				D775D079204EF7D300203BE8 /* a1s.wav */,
+				D775D084204EF7D600203BE8 /* b1.wav */,
+				D775D080204EF7D500203BE8 /* c1.wav */,
+				D775D07F204EF7D500203BE8 /* c1s.wav */,
+				D775D082204EF7D600203BE8 /* c2.wav */,
+				D775D07A204EF7D400203BE8 /* d1.wav */,
+				D775D081204EF7D600203BE8 /* d1s.wav */,
+				D775D07E204EF7D500203BE8 /* e1.wav */,
+				D775D078204EF7D300203BE8 /* f1.wav */,
+				D775D092204EFBD400203BE8 /* aliensSound.wav */,
+				D775D083204EF7D600203BE8 /* f1s.wav */,
+				D775D07C204EF7D400203BE8 /* g1.wav */,
+				D775D07D204EF7D400203BE8 /* g1s.wav */,
+			);
+			path = "Sound Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D789EA19204E1FCC00CF7C3A /* Build configuration list for PBXNativeTarget "TestForTheSaimonGame02" */;
 			buildPhases = (
+				1ED382334BED499BCB9D4F7C /* [CP] Check Pods Manifest.lock */,
 				D789EA03204E1FCC00CF7C3A /* Sources */,
 				D789EA04204E1FCC00CF7C3A /* Frameworks */,
 				D789EA05204E1FCC00CF7C3A /* Resources */,
+				CC8446877B1B724406D583A3 /* [CP] Embed Pods Frameworks */,
+				AAA5FB6727445135666B9F46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,13 +233,94 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D775D087204EF7D700203BE8 /* d1.wav in Resources */,
+				D775D091204EF7D700203BE8 /* b1.wav in Resources */,
+				D775D086204EF7D700203BE8 /* a1s.wav in Resources */,
+				D775D098204F056200203BE8 /* pianoLow1.wav in Resources */,
+				D789EA24204EBCC000CF7C3A /* G1sound.wav in Resources */,
+				D775D099204F056200203BE8 /* pianoMidium3.wav in Resources */,
+				D775D090204EF7D700203BE8 /* f1s.wav in Resources */,
+				D789EA28204EBCC000CF7C3A /* G2sound.wav in Resources */,
+				D775D088204EF7D700203BE8 /* a1.wav in Resources */,
+				D775D089204EF7D700203BE8 /* g1.wav in Resources */,
+				D775D093204EFBD400203BE8 /* aliensSound.wav in Resources */,
+				D775D08F204EF7D700203BE8 /* c2.wav in Resources */,
 				D789EA15204E1FCC00CF7C3A /* LaunchScreen.storyboard in Resources */,
+				D775D09A204F056200203BE8 /* pianoHigh4.wav in Resources */,
+				D789EA27204EBCC000CF7C3A /* F2sound.wav in Resources */,
+				D775D085204EF7D700203BE8 /* f1.wav in Resources */,
+				D789EA2A204EBCC000CF7C3A /* C1sound.wav in Resources */,
 				D789EA12204E1FCC00CF7C3A /* Assets.xcassets in Resources */,
+				D775D09B204F056200203BE8 /* pianoMidium2.wav in Resources */,
+				D775D08E204EF7D700203BE8 /* d1s.wav in Resources */,
+				D789EA29204EBCC000CF7C3A /* Asound.wav in Resources */,
+				D775D08C204EF7D700203BE8 /* c1s.wav in Resources */,
+				D789EA25204EBCC000CF7C3A /* C2sound.wav in Resources */,
+				D775D08B204EF7D700203BE8 /* e1.wav in Resources */,
 				D789EA10204E1FCC00CF7C3A /* Main.storyboard in Resources */,
+				D775D08A204EF7D700203BE8 /* g1s.wav in Resources */,
+				D775D08D204EF7D700203BE8 /* c1.wav in Resources */,
+				D789EA26204EBCC000CF7C3A /* F1sound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ED382334BED499BCB9D4F7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestForTheSaimonGame02-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA5FB6727445135666B9F46 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC8446877B1B724406D583A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D789EA03204E1FCC00CF7C3A /* Sources */ = {
@@ -272,6 +463,7 @@
 		};
 		D789EA1A204E1FCC00CF7C3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A43B1BD4819D2E08D7EDD4A /* Pods-TestForTheSaimonGame02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +478,7 @@
 		};
 		D789EA1B204E1FCC00CF7C3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0CD2F532C328B60E366269D /* Pods-TestForTheSaimonGame02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
