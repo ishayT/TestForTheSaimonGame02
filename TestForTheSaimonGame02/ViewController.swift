@@ -32,8 +32,9 @@ class ViewController: UIViewController {
     
     // the array that gives all the sound for the computer to play at the start of any Round
     var counterForComputerTurn: [Int] = [Int]()
+    var counterForPlayerTurn: [Int] = [Int]()
     
-    var gameStarted : Bool = false
+    var gameStarted : Bool = false //need to delete
     
                                 //print("G- low, A-high, F-high, F- low, C-low")
     let soundsForSaimon = ["pianoHigh4", "pianoMidium2", "pianoMidium3", "pianoLow1"]
@@ -51,71 +52,88 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        
-        //startButton.isEnabled = false
-        startFirstRound()
-    }
-    
-    
-    func startFirstRound() {
+        startButton.isEnabled = false
         counterForComputerTurn.removeAll()
-        randomNumber = Int(arc4random_uniform(4)+1)
-        counterForComputerTurn.append(randomNumber)
-        print(counterForComputerTurn)
-        
-        computerFinishedPlaying = true
-        // need to call to the player turn insted!!
-        playerTurn()
-        //startNewRound(checkIfCompTurn: true)
+        startNewRound()
     }
     
     // you need to call startNewRound after the start button was pressed and also when the user finished his turn
-    func startNewRound(checkIfCompTurn: Bool) {
+    func startNewRound() {
+        computerFinishedPlaying = false
+        counterForPlayerTurn.removeAll()
         
+        randomNumber = Int(arc4random_uniform(4)+1)
+        counterForComputerTurn.append(randomNumber)
+        print(counterForComputerTurn)
+        print(counterForComputerTurn.count)
+        //here i need to check if its the compTurn or player and do the logic for each one..
+      
         // iterating trough the array of numbers genaretd for the computer
         for index in 0...numberOfRounds {
-            activateButtonWithSound(inTheIndexOf: counterForComputerTurn[index])
-            print(counterForComputerTurn)
             
             if index == numberOfRounds {
                 computerFinishedPlaying = true
-                print(numberOfRounds)
+                //print(numberOfRounds)
             }
         }
-        numberOfRounds += 1
+        //numberOfRounds += 1
         playerTurn()
     }
     
     func playerTurn() {
         if computerFinishedPlaying == true {
-            print(counterForComputerTurn.count)
+            //print(counterForComputerTurn.count)
             button1.isEnabled = true;   button2.isEnabled = true;
             button3.isEnabled = true;   button4.isEnabled = true;
+            
+            
+            // make this function have a for loop from 0 till computre array.count and have an index which run in both
+            //computerArray and in the PlayerArray and check for each element in the index place for equality
+            //if it's not equal then the loops break's and it's game over. if it's ok it's run while the counters.count is different
             //TODO: Make a button pressed method that will have a counter and will check how many times the
             //TODO: player hit the buttons, the turn should move to the computer if the number of
             //TODO: repetitions isEqual to the computerTurnCounter or if there was a mistake
         }
+//        numberOfRounds += 1 should be here but for testing it's in start new round
     }
     
-    func activateButtonWithSound(inTheIndexOf: Int) {
-        if counterForComputerTurn.count == 1 {
-            print("this is good \(counterForComputerTurn.count)")
-        }
-        counterForComputerTurn.append(Int(arc4random_uniform(4)+1))
-        print("this is bad \(counterForComputerTurn.count)")
-    }
-    
-    @IBAction func gamePlayButtonsPressed(_ sender: UIButton) {
+    @IBAction func saimonPlayButtonsPressed(_ sender: UIButton) {
         selectedSound = soundsForSaimon[sender.tag - 1]
+        
+        counterForPlayerTurn.append(sender.tag)
+        
+        for index in counterForPlayerTurn.count-1...counterForPlayerTurn.count-1{
+            
+                if counterForPlayerTurn[index] == counterForComputerTurn[index] {
+                    print("you are right")
+                } else {
+                    print("you are wrong")
+                    break
+                }
+//            if counterForPlayerTurn.count < counterForComputerTurn.count {
+//            }
+            //TODO: a problem each time the playerTurn is calling the new round after each button press and in the game there is more then one buton press
+        }
+        //computerFinishedPlaying = false
+        
+        
         
         sender.showsTouchWhenHighlighted = true
         
-//        sender.layer.shadowColor = UIColor.yellow.cgColor
-//        sender.layer.shadowRadius = 10.0
-//        sender.layer.shadowOpacity = 0.8
-//        sender.layer.masksToBounds = false
+        //        sender.layer.shadowColor = UIColor.yellow.cgColor
+        //        sender.layer.shadowRadius = 10.0
+        //        sender.layer.shadowOpacity = 0.8
+        //        sender.layer.masksToBounds = false
         playSound()
+        
+        
+        if counterForPlayerTurn.count == counterForComputerTurn.count {
+            numberOfRounds += 1
+            startNewRound()
+        }
     }
+    
+    
     
     func playSound(){
         let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav")
