@@ -74,9 +74,6 @@ class ViewController: UIViewController {
         print(self.counterForComputerTurn)
         //print(self.counterForComputerTurn.count)
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-//        })
-        
         for index in 0...numberOfRounds {
             if index == numberOfRounds {
                 computerFinishedPlaying = true
@@ -117,11 +114,23 @@ class ViewController: UIViewController {
         }
         ////TODO: animate
 //        sender.showsTouchWhenHighlighted = true // make it work as a shodowChangingMethod
-        sender.layer.shadowColor = UIColor.white.cgColor
-        sender.layer.shadowRadius = 10.0
-        sender.layer.shadowOpacity = 0.8
-        sender.layer.masksToBounds = false
+        UIView.animate(withDuration: 1.0) {
+            sender.layer.shadowColor = UIColor.white.cgColor
+            sender.layer.shadowRadius = 7.0
+            sender.layer.shadowOpacity = 0.8
+            sender.layer.masksToBounds = false
+//            self.playSound()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                  sender.layer.shadowOpacity = 0.0
+                
+            })
+        }
+        
+//        UIView.animate(withDuration: 3.0) {
+//            //
+//        }
         playSound()
+        
         /////
         
         if counterForPlayerTurn.count == counterForComputerTurn.count {
