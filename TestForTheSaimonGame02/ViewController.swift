@@ -17,10 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    //2. the score and round related varibals
+    //2. the score lives and round related varibals
+
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var livesLabel: UILabel!
     var numberOfRounds : Int = 0
+    var scoreNumber : Int = 0
+    var numberOflives = 3
     
     //3. other varibles related to logic in the game
     var randomNumber : Int = 0
@@ -34,8 +38,6 @@ class ViewController: UIViewController {
     var counterForComputerTurn: [Int] = [Int]()
     var counterForPlayerTurn: [Int] = [Int]()
     
-    var gameStarted : Bool = false //need to delete
-    
                                 //print("G- low, A-high, F-high, F- low, C-low")
     let soundsForSaimon = ["pianoHigh4", "pianoMidium2", "pianoMidium3", "pianoLow1"]
     
@@ -44,16 +46,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //disable buttons
-        button1.isEnabled = false;   button2.isEnabled = false;
-        button3.isEnabled = false;   button4.isEnabled = false;
+        changeThePlayButtons(isEnabledStatus: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func changeThePlayButtons(isEnabledStatus: Bool){
+        button1.isEnabled = isEnabledStatus;   button2.isEnabled = isEnabledStatus;
+        button3.isEnabled = isEnabledStatus;   button4.isEnabled = isEnabledStatus;
     }
 
     @IBAction func startButtonPressed(_ sender: UIButton) {
         startButton.isEnabled = false
         counterForComputerTurn.removeAll()
+        numberOflives = 3
         startNewRound()
     }
     
@@ -62,73 +69,62 @@ class ViewController: UIViewController {
         computerFinishedPlaying = false
         counterForPlayerTurn.removeAll()
         
-        randomNumber = Int(arc4random_uniform(4)+1)
-        counterForComputerTurn.append(randomNumber)
-        print(counterForComputerTurn)
-        print(counterForComputerTurn.count)
-        //here i need to check if its the compTurn or player and do the logic for each one..
-      
-        // iterating trough the array of numbers genaretd for the computer
+        self.randomNumber = Int(arc4random_uniform(4)+1)
+        self.counterForComputerTurn.append(self.randomNumber)
+        print(self.counterForComputerTurn)
+        //print(self.counterForComputerTurn.count)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+//        })
+        
         for index in 0...numberOfRounds {
-            
             if index == numberOfRounds {
                 computerFinishedPlaying = true
-                //print(numberOfRounds)
             }
         }
-        //numberOfRounds += 1
+        numberOfRounds += 1
         playerTurn()
     }
     
     func playerTurn() {
         if computerFinishedPlaying == true {
-            //print(counterForComputerTurn.count)
-            button1.isEnabled = true;   button2.isEnabled = true;
-            button3.isEnabled = true;   button4.isEnabled = true;
-            
-            
-            // make this function have a for loop from 0 till computre array.count and have an index which run in both
-            //computerArray and in the PlayerArray and check for each element in the index place for equality
-            //if it's not equal then the loops break's and it's game over. if it's ok it's run while the counters.count is different
-            //TODO: Make a button pressed method that will have a counter and will check how many times the
-            //TODO: player hit the buttons, the turn should move to the computer if the number of
-            //TODO: repetitions isEqual to the computerTurnCounter or if there was a mistake
+            changeThePlayButtons(isEnabledStatus: true)
         }
-//        numberOfRounds += 1 should be here but for testing it's in start new round
     }
     
     @IBAction func saimonPlayButtonsPressed(_ sender: UIButton) {
         selectedSound = soundsForSaimon[sender.tag - 1]
-        
         counterForPlayerTurn.append(sender.tag)
         
         for index in counterForPlayerTurn.count-1...counterForPlayerTurn.count-1{
             
                 if counterForPlayerTurn[index] == counterForComputerTurn[index] {
                     print("you are right")
+                    scoreNumber = scoreNumber + 5 + 2 * numberOfRounds
+                    updateUI()
+                    print(scoreNumber)
                 } else {
                     print("you are wrong")
+                    numberOflives -= 1
+                    scoreNumber = scoreNumber - 5
+                    updateUI()
+                    print(scoreNumber)
+                    if numberOflives == 0 {
+                        gameOver()
+                    }
                     break
                 }
-//            if counterForPlayerTurn.count < counterForComputerTurn.count {
-//            }
-            //TODO: a problem each time the playerTurn is calling the new round after each button press and in the game there is more then one buton press
         }
-        //computerFinishedPlaying = false
-        
-        
-        
-        sender.showsTouchWhenHighlighted = true
-        
-        //        sender.layer.shadowColor = UIColor.yellow.cgColor
-        //        sender.layer.shadowRadius = 10.0
-        //        sender.layer.shadowOpacity = 0.8
-        //        sender.layer.masksToBounds = false
+        ////TODO: animate
+//        sender.showsTouchWhenHighlighted = true // make it work as a shodowChangingMethod
+        sender.layer.shadowColor = UIColor.white.cgColor
+        sender.layer.shadowRadius = 10.0
+        sender.layer.shadowOpacity = 0.8
+        sender.layer.masksToBounds = false
         playSound()
-        
+        /////
         
         if counterForPlayerTurn.count == counterForComputerTurn.count {
-            numberOfRounds += 1
             startNewRound()
         }
     }
@@ -137,7 +133,6 @@ class ViewController: UIViewController {
     
     func playSound(){
         let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav")
-        
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: soundURL!)
         } catch {
@@ -146,63 +141,39 @@ class ViewController: UIViewController {
         soundPlayer.play()
     }
     
-    
-    
-    
-    
-    
-    
-    func startTimer() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-            self.gameStarted = false
-        })
+    func updateUI(){
+        roundLabel.text = "Rounds = \(numberOfRounds)"
+        scoreLabel.text = "score = \(scoreNumber)"
+        livesLabel.text = "Lives = \(numberOflives)"
     }
     
-    func startNewGame(){
-        counterForComputerTurn.removeAll()
-        setScore(scoreN: 0)
-        setRound(roundNum: 1)
-        startNextRound()
+    func gameOver() {
+        print("GAME OVER!!")
+        //dont know why it's not working"
+//        changeThePlayButtons(isEnabledStatus: false)
+//        startButton.isEnabled = true
     }
-    
-    func setScore (scoreN: Int) {
-        scoreLabel.text = "Score: \(scoreN)"
-    }
-    
-    func setRound(roundNum: Int) {
-        roundLabel.text = "Round: \(roundNum)"
-    }
-    
-    
-    func startNextRound(){
-        //TODO: ArcForRandom number, append number to the array
-        
-        playNote(index: 0, toContinue: true)
-    }
- 
-    
-    func playNote(index: Int, toContinue: Bool){
-        if index<0 {
-            return
-        } else if index>=counterForComputerTurn.count{
-            return
-        }
-        
-        //play
-        
-    }
-    
-    func endGame(){
-        
-    }
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+
+//func startTimer() {
+//    //
+//}
+//        sender.layer.shadowColor = UIColor.yellow.cgColor
+//        sender.layer.shadowRadius = 10.0
+//        sender.layer.shadowOpacity = 0.8
+//        sender.layer.masksToBounds = false
+
+
+// make this function have a for loop from 0 till computre array.count and have an index which run in both
+//computerArray and in the PlayerArray and check for each element in the index place for equality
+//if it's not equal then the loops break's and it's game over. if it's ok it's run while the counters.count is different
+//TODO: Make a button pressed method that will have a counter and will check how many times the
+//TODO: player hit the buttons, the turn should move to the computer if the number of
+//TODO: repetitions isEqual to the computerTurnCounter or if there was a mistake
+
+
 
 //TODO: 1. after the computer finished runnig over his array the bool need to change to true
 //TODO: 2. then a method for the playerTurn should be call
