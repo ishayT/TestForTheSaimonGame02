@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     var numberOfRounds : Int = 0
     var scoreNumber : Int = 0
-    var numberOflives = 3
+    var numberOfLives = 3
     
     //3. other varibles related to logic in the game
     var randomNumber : Int = 0
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     @IBAction func startButtonPressed(_ sender: UIButton) {
         startButton.isEnabled = false
         counterForComputerTurn.removeAll()
-        numberOflives = 3
+        numberOfLives = 3
         startNewRound()
     }
     
@@ -73,6 +73,35 @@ class ViewController: UIViewController {
         self.counterForComputerTurn.append(self.randomNumber)
         print(self.counterForComputerTurn)
         //print(self.counterForComputerTurn.count)
+        for number in counterForComputerTurn {
+            
+            switch number {
+            case 1:
+                button1.layer.shadowColor = UIColor.white.cgColor
+                button1.layer.shadowRadius = 7.0
+                button1.layer.shadowOpacity = 0.8
+                button1.layer.masksToBounds = false
+            case 2:
+                button2.layer.shadowColor = UIColor.white.cgColor
+                button2.layer.shadowRadius = 7.0
+                button2.layer.shadowOpacity = 0.8
+                button2.layer.masksToBounds = false
+            case 3:
+                button3.layer.shadowColor = UIColor.white.cgColor
+                button3.layer.shadowRadius = 7.0
+                button3.layer.shadowOpacity = 0.8
+                button3.layer.masksToBounds = false
+            case 4:
+                button4.layer.shadowColor = UIColor.white.cgColor
+                button4.layer.shadowRadius = 7.0
+                button4.layer.shadowOpacity = 0.8
+                button4.layer.masksToBounds = false
+            default:
+                print("$$$")
+            }
+            
+        }
+        
         
         for index in 0...numberOfRounds {
             if index == numberOfRounds {
@@ -102,11 +131,11 @@ class ViewController: UIViewController {
                     print(scoreNumber)
                 } else {
                     print("you are wrong")
-                    numberOflives -= 1
+                    numberOfLives -= 1
                     scoreNumber = scoreNumber - 5
                     updateUI()
                     print(scoreNumber)
-                    if numberOflives == 0 {
+                    if numberOfLives == 0 {
                         gameOver()
                     }
                     break
@@ -153,7 +182,7 @@ class ViewController: UIViewController {
     func updateUI(){
         roundLabel.text = "Rounds = \(numberOfRounds)"
         scoreLabel.text = "score = \(scoreNumber)"
-        livesLabel.text = "Lives = \(numberOflives)"
+        livesLabel.text = "Lives = \(numberOfLives)"
     }
     
     func gameOver() {
