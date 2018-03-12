@@ -47,9 +47,24 @@ class ViewController: UIViewController {
         
         //disable buttons
         changeThePlayButtons(isEnabledStatus: false)
+        
+        let tapGestureRecognaizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.addGlow))
+        tapGestureRecognaizer.numberOfTapsRequired = 1
+        button1.addGestureRecognizer(tapGestureRecognaizer)
+//        button2.addGestureRecognizer(tapGestureRecognaizer)
+//        button3.addGestureRecognizer(tapGestureRecognaizer)
+//        button4.addGestureRecognizer(tapGestureRecognaizer)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func addGlow(){
+        let glow = Glowing(numberOfPulses: 1, radius: 100, position: button1.center)
+        glow.animationDuration = 0.8
+        glow.backgroundColor = UIColor.white.cgColor
+        
+        self.view.layer.insertSublayer(glow, below: button1.layer)
     }
     
     func changeThePlayButtons(isEnabledStatus: Bool){
@@ -69,39 +84,41 @@ class ViewController: UIViewController {
         computerFinishedPlaying = false
         counterForPlayerTurn.removeAll()
         
-        self.randomNumber = Int(arc4random_uniform(4)+1)
-        self.counterForComputerTurn.append(self.randomNumber)
-        print(self.counterForComputerTurn)
+        randomNumber = Int(arc4random_uniform(4)+1)
+        counterForComputerTurn.append(randomNumber)
+        print(counterForComputerTurn)
         //print(self.counterForComputerTurn.count)
         for number in counterForComputerTurn {
             
             switch number {
             case 1:
-                button1.layer.shadowColor = UIColor.white.cgColor
-                button1.layer.shadowRadius = 7.0
-                button1.layer.shadowOpacity = 0.8
-                button1.layer.masksToBounds = false
+                makeButtonGlow(glowingButton: button1)
+                makeButtonFade(fadingButton: button2)
+                makeButtonFade(fadingButton: button3)
+                makeButtonFade(fadingButton: button4)
             case 2:
-                button2.layer.shadowColor = UIColor.white.cgColor
-                button2.layer.shadowRadius = 7.0
-                button2.layer.shadowOpacity = 0.8
-                button2.layer.masksToBounds = false
+                makeButtonGlow(glowingButton: button2)
+                makeButtonFade(fadingButton: button1)
+                makeButtonFade(fadingButton: button3)
+                makeButtonFade(fadingButton: button4)
             case 3:
-                button3.layer.shadowColor = UIColor.white.cgColor
-                button3.layer.shadowRadius = 7.0
-                button3.layer.shadowOpacity = 0.8
-                button3.layer.masksToBounds = false
+                makeButtonGlow(glowingButton: button3)
+                makeButtonFade(fadingButton: button1)
+                makeButtonFade(fadingButton: button2)
+                makeButtonFade(fadingButton: button4)
             case 4:
-                button4.layer.shadowColor = UIColor.white.cgColor
-                button4.layer.shadowRadius = 7.0
-                button4.layer.shadowOpacity = 0.8
-                button4.layer.masksToBounds = false
+                UIView.animate(withDuration: 1.0) {
+                    self.makeButtonGlow(glowingButton: self.button4)
+                    self.makeButtonFade(fadingButton: self.button1)
+                    self.makeButtonFade(fadingButton: self.button2)
+                    self.makeButtonFade(fadingButton: self.button3)
+                    self.makeButtonFade(fadingButton: self.button4)
+                }
             default:
                 print("$$$")
             }
             
         }
-        
         
         for index in 0...numberOfRounds {
             if index == numberOfRounds {
@@ -141,33 +158,47 @@ class ViewController: UIViewController {
                     break
                 }
         }
+        makeButtonGlow(glowingButton: sender)
+        makeButtonFade(fadingButton: sender)
         ////TODO: animate
 //        sender.showsTouchWhenHighlighted = true // make it work as a shodowChangingMethod
-        UIView.animate(withDuration: 1.0) {
-            sender.layer.shadowColor = UIColor.white.cgColor
-            sender.layer.shadowRadius = 7.0
-            sender.layer.shadowOpacity = 0.8
-            sender.layer.masksToBounds = false
-//            self.playSound()
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                  sender.layer.shadowOpacity = 0.0
-                
-            })
-        }
-        
-//        UIView.animate(withDuration: 3.0) {
-//            //
+//        UIView.animate(withDuration: 1.0) {
+//            sender.layer.shadowColor = UIColor.white.cgColor
+//            sender.layer.shadowRadius = 7.0
+//            sender.layer.shadowOpacity = 0.8
+//            sender.layer.masksToBounds = false
+////            self.playSound()
+//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+//                  sender.layer.shadowOpacity = 0.0
+//
+//            })
 //        }
-        playSound()
         
-        /////
+
+        playSound()
         
         if counterForPlayerTurn.count == counterForComputerTurn.count {
             startNewRound()
         }
     }
     
+    func makeButtonGlow(glowingButton btn: UIButton){
+        UIView.animate(withDuration: 1.0) {
+            btn.layer.shadowColor = UIColor.white.cgColor
+            btn.layer.shadowRadius = 7.0
+            btn.layer.shadowOpacity = 0.9
+            btn.layer.masksToBounds = false
+        }
+    }
     
+    func makeButtonFade(fadingButton btn: UIButton){
+        UIView.animate(withDuration: 0.5) {
+            btn.layer.shadowColor = UIColor.black.cgColor
+            btn.layer.shadowRadius = 7.0
+            btn.layer.shadowOpacity = 0.1
+            btn.layer.masksToBounds = false
+        }
+    }
     
     func playSound(){
         let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav")

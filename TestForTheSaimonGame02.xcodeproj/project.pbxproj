@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A0EBBCA9ADA27507F194372 /* Pods_TestForTheSaimonGame02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E43015CB70C4D82EBDE2B5A /* Pods_TestForTheSaimonGame02.framework */; };
+		D712D28F20567EDF00214EA2 /* Glowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712D28E20567EDF00214EA2 /* Glowing.swift */; };
 		D775D085204EF7D700203BE8 /* f1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D078204EF7D300203BE8 /* f1.wav */; };
 		D775D086204EF7D700203BE8 /* a1s.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D079204EF7D300203BE8 /* a1s.wav */; };
 		D775D087204EF7D700203BE8 /* d1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D775D07A204EF7D400203BE8 /* d1.wav */; };
@@ -44,6 +45,7 @@
 		0E43015CB70C4D82EBDE2B5A /* Pods_TestForTheSaimonGame02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestForTheSaimonGame02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A43B1BD4819D2E08D7EDD4A /* Pods-TestForTheSaimonGame02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestForTheSaimonGame02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CD2F532C328B60E366269D /* Pods-TestForTheSaimonGame02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestForTheSaimonGame02.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestForTheSaimonGame02/Pods-TestForTheSaimonGame02.release.xcconfig"; sourceTree = "<group>"; };
+		D712D28E20567EDF00214EA2 /* Glowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glowing.swift; sourceTree = "<group>"; };
 		D775D078204EF7D300203BE8 /* f1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f1.wav; sourceTree = "<group>"; };
 		D775D079204EF7D300203BE8 /* a1s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a1s.wav; sourceTree = "<group>"; };
 		D775D07A204EF7D400203BE8 /* d1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d1.wav; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				D789EA13204E1FCC00CF7C3A /* LaunchScreen.storyboard */,
 				D789EA16204E1FCC00CF7C3A /* Info.plist */,
 				D789EA1C204EBC8500CF7C3A /* Sound Files */,
+				D712D28E20567EDF00214EA2 /* Glowing.swift */,
 			);
 			path = TestForTheSaimonGame02;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D712D28F20567EDF00214EA2 /* Glowing.swift in Sources */,
 				D789EA0D204E1FCC00CF7C3A /* ViewController.swift in Sources */,
 				D789EA0B204E1FCC00CF7C3A /* AppDelegate.swift in Sources */,
 			);
